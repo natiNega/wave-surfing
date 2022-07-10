@@ -1,0 +1,16 @@
+.nevbar{
+    color: black;
+    margin:auto;
+    /* border: solid; */
+    /* background-color: rgb(196, 201, 255); */
+    /* display: flex;
+justify-content: space-between; */
+/* margin-left: 20px; */
+}
+
+
+.Link{
+display: flex; 
+ justify-content: space-evenly; 
+ border-bottom: solid 1px;
+}
