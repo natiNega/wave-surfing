@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import Surfboard from "../../models/product";
+import Equipment from "../../components/Surfing equipment/surfing equipment"
 
 function SurfingEquipmentPage() {
   const handler = async (req, res) => {
@@ -56,7 +57,12 @@ function SurfingEquipmentPage() {
   //   });
   // });
 
-  return <h1>Surfing Equipment</h1>;
-}
+  return (
+    <>
+    <h1>Surfing Equipment</h1>
+    
+    <Equipment />
+    </>
+)};
 
 export default SurfingEquipmentPage;
