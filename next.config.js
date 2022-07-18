@@ -8,6 +8,9 @@ const nextConfig = {
     DB_HOST,
     DB_NAME,
   },
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 };
 
 module.exports = nextConfig;

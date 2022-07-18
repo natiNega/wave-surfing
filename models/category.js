@@ -2,9 +2,8 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const category = new Schema({
-  categories: {
-    type: String,
-  },
+  categories:String,
+  
 });
 
 mongoose.models = {};
