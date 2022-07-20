@@ -16,8 +16,8 @@ function Equipment() {
       {equipment?.map((equipment) => {
         return (
           <Product
-            key={equipment.id}
-            id={equipment.id}
+            key={equipment._id}
+            id={equipment._id}
             numitem={equipment.numitem}
             name={equipment.title}
             category={equipment.category}

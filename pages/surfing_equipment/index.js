@@ -1,28 +1,26 @@
 import mongoose from "mongoose";
-import Surfboard from "../../models/product";
-import Equipment from "../../components/Surfing equipment/surfing equipment"
+import Sap from "../../models/product";
+import Equipment from "../../components/Surfing equipment/surfing equipment";
 
 function SurfingEquipmentPage() {
   const handler = async (req, res) => {
     if (req.method === "GET") {
       // Check if name, email or password is provided
-      const { name, category, description, price, numitem, image } =
-        req.body;
+      const { name, category, description, price, numitem, image } = req.body;
       if (name) {
         try {
-          const surfboard = new Surfboard({
+          const Sap = new Sap({
             name,
             category,
             description,
             price,
             numitem,
             image,
-           
           });
-          // Create new surfboard
-          const surfboardCreated = await surfboard.save();
+          // Create new Sap
+          const SapCreated = await Sap.save();
 
-          res.status(200).send(surfboardCreated);
+          res.status(200).send(SapCreated);
         } catch (error) {
           res.status(500).send(error.message);
         }
@@ -34,7 +32,7 @@ function SurfingEquipmentPage() {
     }
   };
 
-  // const Surfboard = mongoose.model("Surfboard", {
+  // const Sap = mongoose.model("Sap", {
   //   name: String,
   //   category: String,
   //   description: String,
@@ -59,10 +57,11 @@ function SurfingEquipmentPage() {
 
   return (
     <>
-    <h1>Surfing Equipment</h1>
-    
-    <Equipment />
+      <h1>Surfing Equipment</h1>
+
+      <Equipment />
     </>
-)};
+  );
+}
 
 export default SurfingEquipmentPage;

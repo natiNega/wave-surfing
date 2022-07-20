@@ -24,7 +24,9 @@ const product = new Schema({
   type: {
     type: String,
   },
-
+  quntity: {
+    type: Number,
+  },
 });
 
 mongoose.models = {};

@@ -1,26 +1,16 @@
-import Link from "next/link";
-import { useEffect, useState } from "react";
+// import Link from "next/link";
 import Product from "../product/Product";
 import TemporaryDrawer from "../TemporaryDrawer/TemporaryDrawer";
 
-
-function Products() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("/api/product")
-      .then((res) => res.json())
-      .then((products) => setProducts(products));
-  }, []);
-
+function Products({ products }) {
   return (
     <section className="products">
-      {products?.map((product,TemporaryDrawer) => {
+      {products?.map((product) => {
         return (
-          <>
           <Product
-            key={product.id }
-            id={product.id}
+            {...product}
+            key={product._id}
+            id={product._id}
             numitem={product.numitem}
             title={product.title}
             category={product.category}
@@ -29,8 +19,6 @@ function Products() {
             image={product.image}
             quntity={product.quntity}
           />
-
-          </>
         );
       })}
     </section>

@@ -20,12 +20,16 @@ const surfing_equipment = new Schema({
   image: {
     type: String,
   },
-
-
+  quntity: {
+    type: Number,
+  },
 });
 
 mongoose.models = {};
 
-const Surfing_equipment = mongoose.model("Surfing_equipment", surfing_equipment);
+const Surfing_equipment = mongoose.model(
+  "Surfing_equipment",
+  surfing_equipment
+);
 
 export default Surfing_equipment;
