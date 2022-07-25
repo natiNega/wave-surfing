@@ -1,27 +1,39 @@
 // import Link from "next/link";
+import { Box, Grid } from "@mui/material";
+
+
 import Product from "../product/Product";
 import TemporaryDrawer from "../TemporaryDrawer/TemporaryDrawer";
 
 function Products({ products }) {
   return (
-    <section className="products">
+    <>
+
+    <Box sx={{flexGrow:1}}>
+      <Grid container spacing={4}>
       {products?.map((product) => {
         return (
-          <Product
+          
+          <Grid item  key={product._id}>
+           
+            <Product
             {...product}
-            key={product._id}
             id={product._id}
             numitem={product.numitem}
-            title={product.title}
+            name={product.title}
             category={product.category}
             description={product.description}
             price={product.price}
             image={product.image}
             quntity={product.quntity}
           />
+          </Grid>
+          
         );
       })}
-    </section>
+      </Grid>
+    </Box>
+    </>
   );
 }
 

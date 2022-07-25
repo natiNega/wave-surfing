@@ -7,23 +7,87 @@ import Button from "@mui/material/Button";
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import Product from "../product/Product";
-import { Divider } from "@mui/material";
+import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
+import styles from "../TemporaryDrawer/TemporaryDrawer.module.css"
+
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Divider,
+  Link,
+  Typography,
+} from "@mui/material";
 
 function TemporaryDrawer() {
-  const { productCart } = useContext(CartContext);
+  const { productCart, getQuntity, Remove, addProductToCart,product } = useContext(CartContext);
   const [showCart, setShowCart] = React.useState(false);
   return (
+    // <grid  key={product.id} container spacing ={0} >
     <div>
-      <Button onClick={() => setShowCart(true)}>right</Button>
+      <Button onClick={() => setShowCart(true)}><ShoppingCartRoundedIcon  sx={{color:"black"}}/></Button>
       <Drawer anchor="right" open={showCart} onClose={() => setShowCart(false)}>
         <h3 style={{ display: "flex", justifyContent: "center" }}>
           Shop Cart:
         </h3>
-        {productCart.map((product) => (
-          <Product key={product._id} {...product} />
-        ))}
+        {productCart?.map((product) => {
+          return (
+            
+              <Card  key={product.id} className="_productCard" sx={{maxWidth: 350, maxHeigth: 350}} >
+                <CardActionArea className="_card" >
+                  <CardMedia
+                    component="img"
+                    height="auto"
+                    image={product.image}
+                    alt="Suft Baord"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6" component="div">
+                      {product.title}
+                    </Typography>
+                    {/* <Typography variant="body2" color="text.secondary">
+                      {product.description}
+                    </Typography> */}
+                    <Typography>{product.quntity * product.price} $</Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <div className="product-card">
+                    <div className="product-image">
+                      Add To Cart{" "}
+                      <button
+                        onClick={() => addProductToCart(product)}
+                        className="plus-button plus-button--small"
+                      >
+                        +
+                      </button>
+                      <Link href={`/details/${product.id}`}>
+                        <button>Details</button>
+                      </Link>
+                      {getQuntity(product.id) > 0 && (
+                        <button
+                          onClick={() => Remove(product)}
+                          className="minus-button minus-button--small"
+                        >
+                          -
+                        </button>
+                      )}
+                    </div>
+                    <span>{getQuntity(product.id)}</span>
+                  </div>
+                </CardActions>
+              </Card>
+            
+            
+            );
+          })}
         <footer>
-          <h3>Sub total: </h3>
+          <h3 style={{ display: "flex", justifyContent: "center" }}>
+        
+            Sub total:{""}
+          </h3>
         </footer>
       </Drawer>
     </div>

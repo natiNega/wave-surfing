@@ -11,7 +11,7 @@ export const homeButtons = [
   },
   {
     src: "/surfing.jpg",
-    title: "Sap",
+    title: "Surf Boards",
     route: "/sap",
   },
   {

@@ -12,16 +12,20 @@ import {
 // import Image from "next/image";
 
 function Details() {
+ 
   const [details, setDetails] = useState();
   const router = useRouter();
   const { id } = router.query;
   useEffect(() => {
-    fetch(`/api/description/${id}`)
+    fetch(`/api/details/${id}`)
       .then((res) => res.json())
       .then((data) => setDetails(data));
-  });
+  }, []);
+  console.log("details" ,details);
+  const { addProductToCart, Remove, product, getQuntity } =
+    useContext(CartContext);
 
-  const { title, description, image, price } = useContext(CartContext);
+
 
   return (
     <Card sx={{ maxWidth: 350 }}>
@@ -29,17 +33,18 @@ function Details() {
         <CardMedia
           component="img"
           height="350"
-          image={image}
+          image={details?.image}
           alt="Suft Baord"
         />
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
-            {title}
+            {details?.title}
+         
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description}
+            {details?.description}
           </Typography>
-          <Typography>{price} $</Typography>
+          <Typography>{details?.price} $</Typography>
         </CardContent>
       </CardActionArea>
 
