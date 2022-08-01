@@ -2,7 +2,7 @@
 import { Box, Grid } from "@mui/material";
 import styles from "./Products.module.css";
 
-import Product from "../product/Product";
+import Product from "../Product/product";
 import TemporaryDrawer from "../TemporaryDrawer/TemporaryDrawer";
 
 function Products({ products }) {

@@ -1,7 +1,7 @@
 // import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
-import Product from "../product/Product";
+import Product from "../Product/product";
 import Styles from "./surfing equipment.module.css";
 
 
