@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Product from "../Product/product";
+import Product from "../Product/Product";
 function IsrealSea() {
   const [IsraelSeas, setIsraelSeas] = useState([]);
   // import Product from "../product/Product";

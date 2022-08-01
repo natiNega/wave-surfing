@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
-import Product from "../Product/product";
+import Product from "../Product/Product";
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import styles from "../TemporaryDrawer/TemporaryDrawer.module.css"
 
