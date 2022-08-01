@@ -1,18 +1,26 @@
 .nevbar{
     color: black;
-    margin:auto;
-    padding: 0%;
+    /* margin:auto; */
+    padding: 4%;
+    /* margin-top:0px; */
+    
+    /* border: solid;
+    display: flex;
+    justify-content: space-between; 
+     margin-left: 20px; */
 
-    /* border: solid; */
-    /* background-color: rgb(196, 201, 255); */
-    /* display: flex;
-justify-content: space-between; */
-/* margin-left: 20px; */
+ display: flex; 
+
+ position: absolute; 
+ top: -20px;
 }
 
 
 .Link{
-display: flex; 
- justify-content: space-around; 
- /* border-bottom: solid 1px; */
+    flex-direction: row;
+    /* margin-top: -80px; */
+    justify-content: space-around; 
+    /* border-bottom: solid 2px; */
+    /* align-content: flex-start; */
+ 
 }

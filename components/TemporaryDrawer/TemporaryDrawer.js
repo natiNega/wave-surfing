@@ -2,8 +2,10 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import Drawer from "@mui/material/Drawer";
+import Stack from '@mui/material/Stack';
 import Button from "@mui/material/Button";
 // import Image from "next/dist/client/image";
+
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import Product from "../product/Product";
@@ -17,29 +19,30 @@ import {
   CardContent,
   CardMedia,
   Divider,
+  Grid,
   Link,
   Typography,
 } from "@mui/material";
 
 function TemporaryDrawer() {
-  const { productCart, getQuntity, Remove, addProductToCart,product } = useContext(CartContext);
+  const { productCart, getQuntity, Remove, addProductToCart,subTotal } = useContext(CartContext);
   const [showCart, setShowCart] = React.useState(false);
   return (
     // <grid  key={product.id} container spacing ={0} >
     <div>
-      <Button onClick={() => setShowCart(true)}><ShoppingCartRoundedIcon  sx={{color:"black"}}/></Button>
+      <Button onClick={() => setShowCart(true)}><ShoppingCartRoundedIcon  sx={{color:"black",marginLeft:167,marginTop:-7}}/></Button>
       <Drawer anchor="right" open={showCart} onClose={() => setShowCart(false)}>
-        <h3 style={{ display: "flex", justifyContent: "center" }}>
+        <h3 style={{ display: "flex", justifyContent: "center", width:350}}>
           Shop Cart:
         </h3>
         {productCart?.map((product) => {
           return (
-            
-              <Card  key={product.id} className="_productCard" sx={{maxWidth: 350, maxHeigth: 350}} >
+            <Grid item key={product._id} className="_productCard"  sx={{maxWidth: 350, maxHeigth: 350, display: "flex", justifyContent: "center"}}>
+              <Card >
                 <CardActionArea className="_card" >
                   <CardMedia
                     component="img"
-                    height="auto"
+                    height="flex"
                     image={product.image}
                     alt="Suft Baord"
                   />
@@ -66,7 +69,7 @@ function TemporaryDrawer() {
                       <Link href={`/details/${product.id}`}>
                         <button>Details</button>
                       </Link>
-                      {getQuntity(product.id) > 0 && (
+                      {getQuntity(product._id) > 0 && (
                         <button
                           onClick={() => Remove(product)}
                           className="minus-button minus-button--small"
@@ -75,20 +78,24 @@ function TemporaryDrawer() {
                         </button>
                       )}
                     </div>
-                    <span>{getQuntity(product.id)}</span>
+                    <span>{getQuntity(product._id)}</span>
                   </div>
                 </CardActions>
               </Card>
+              </Grid>
             
             
             );
           })}
         <footer>
-          <h3 style={{ display: "flex", justifyContent: "center" }}>
+          <h3  style={{ display: "flex", justifyContent: "center" ,flex:"auto" }}>
         
-            Sub total:{""}
+            Sub total:{subTotal}
           </h3>
         </footer>
+        <Stack spacing={2} direction="row" sx={{display: "flex", justifyContent: "center"}}>
+      <Button variant="contained" color="success" >Purchase</Button>
+    </Stack>
       </Drawer>
     </div>
   );

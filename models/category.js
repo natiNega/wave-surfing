@@ -1,13 +1,23 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const category = new Schema({
-  categories:String,
+const cartOrder = new Schema({
+  title: String,
+
+  image: {
+    type: String,
+  },
+  quntity: {
+    type: Number,
+  },
+  price: {
+    type: Number,
+  },
   
 });
 
 mongoose.models = {};
 
-const Category = mongoose.model("Category", category);
+const CartOrder = mongoose.model("CartOrder", cartOrder);
 
-export default Category;
+export default CartOrder;

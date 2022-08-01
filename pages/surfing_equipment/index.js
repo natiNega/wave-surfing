@@ -31,6 +31,7 @@ function SurfingEquipmentPage() {
       res.status(422).send("req_method_not_supported");
     }
   };
+  
 
   // const Sap = mongoose.model("Sap", {
   //   name: String,

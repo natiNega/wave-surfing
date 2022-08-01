@@ -4,20 +4,30 @@ import styles from "../../styles/nevbar.module.css";
 import TemporaryDrawer from "../TemporaryDrawer/TemporaryDrawer";
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import Login from "../login/login-btn";
+import VideoPlayer from "../Media-player/Media Player";
+import { Homebuttens } from "../button/Homebuttens";
 
 
 function Nevbar() {
   return (
     <nav className={styles.nevbar}>
-      <div className={styles.Link} >
-        {/* <span className="material-icons-outlined">surfing</span> */}
+      <div className={styles.Link} style={{ backgroundImage: `url('${"woman-surfing-wave_s.jpg"}')` ,
+      height: 1550}} >
+
         <Link  href="/" ><HomeRoundedIcon  sx={{color:"black" }} /></Link>
-        
+        {/* <span className="material-icons-outlined">surfing</span> */}
+      {/* <Image src="/woman-surfing-wave_s.webp" height={500} width={5000} alt=""/> */}
         {/* <Link href="/cart">Cart</Link> */}
-        <Link href="/Surfboards" >Surf Boards</Link>
-        <Link href="/private_lessons">Private Lessons</Link>
+        {/* <Link href="/Surfboards" >Surf Boards</Link> */}
+        {/* <Link href="/private_lessons">Private Lessons</Link> */}
         <Login />
         <TemporaryDrawer />
+
+        <div>
+       <VideoPlayer />
+       </div>
+      <Homebuttens />
+    
       </div>
     </nav>
   );

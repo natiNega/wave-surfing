@@ -4,7 +4,7 @@ import { SocialIcon } from 'react-social-icons';
 // import Image from "next/image";
 export default function Login() {
   const { data: session } = useSession();
-  console.log("session", session);
+  // console.log("session", session);
   if (session) {
     return (
       <>
@@ -15,7 +15,7 @@ export default function Login() {
   }
   return (
     <>
-      Not signed in <br />
+     
       <div className={styles.Logo}>
         <SocialIcon onClick={() => signIn("Google")} url="https://google.com/in/jaketrent" style={{ height: 28, width: 28 , margin: 5 }} />
          <SocialIcon onClick={() => signIn("github")} url="https://github.com/in/jaketrent" style={{ height: 28, width: 28,margin: 5 }} />

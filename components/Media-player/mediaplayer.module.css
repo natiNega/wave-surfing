@@ -1,0 +1,30 @@
+.Msplayer{
+    display: flex;
+    flex-wrap: inherit;
+    /* align-content: center; */
+    
+    /* justify-content: center; */
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 390px;
+    margin-bottom: 195px;
+    /* background-color: white; */
+    
+}
+.Mplayer{
+    /* align-items: center; */
+    
+    margin-left:100px;
+    margin-top: 80px;
+    margin-right: 80px;
+    /* border :solid 1px; */
+    padding-left: 15px;
+    
+    
+}
+
+.player{
+    /* flex-wrap: nowrap; */
+    /* border :solid 1px; */
+}
+

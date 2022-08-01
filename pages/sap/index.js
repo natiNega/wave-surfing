@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Products from "../../components/Products/Products";
 // SSR - Server Side Rendering
 export async function getServerSideProps() {
@@ -16,7 +17,16 @@ export async function getServerSideProps() {
 }
 
 function Sap({ item }) {
-  return <Products products={item} />;
+  return ( 
+
+  <div className="productImgBackg" style={{backgroundImage: `url('${"tatonomusic-FFCgotROOTY-unsplash (1).jpg"}')`,
+  width: '100%',
+  height: '100%',
+  }}>
+  <Products products={item} />
+  </div>
+
+  )
 }
 
 export default Sap;
