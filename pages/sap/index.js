@@ -2,7 +2,7 @@ import Image from "next/image";
 import Products from "../../components/Products/Products";
 // SSR - Server Side Rendering
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/product/");
+  const res = await fetch("/api/product/");
   const products = await res.json();
   const item = products.map((p) => ({
     ...p,
