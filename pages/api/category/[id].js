@@ -7,7 +7,7 @@ const handler = async (req, res) => {
     if (categories) {
       try {
         const category = new Category({
-          categories,
+          category,
         });
         {
           console.log(category);
