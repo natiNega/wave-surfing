@@ -1,5 +1,5 @@
 import { Grid, Link } from "@mui/material";
-import { homeButtons } from "/data/home-buttons";
+import { homeButtons } from "../../data/home-buttons";
 import React from "react";
 import styles from "../../styles/Home.module.css";
 
