@@ -12,15 +12,20 @@
  display: flex; 
 
  position: absolute; 
- top: -20px;
+ top: 0px;
 }
 
 
 .Link{
     flex-direction: row;
-    /* margin-top: -80px; */
+    margin-top: -30px;
     justify-content: space-around; 
     /* border-bottom: solid 2px; */
     /* align-content: flex-start; */
  
+}
+.home_but{
+    /* margin-top: 50px; */
+    /* margin-right: 50px; */
+   
 }

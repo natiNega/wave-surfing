@@ -3,12 +3,12 @@ import { Box, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import Product from "../product/Product";
 import Styles from "./surfing equipment.module.css";
-
+import { server } from '../../config'
 
 function Equipment() {
   const [equipment, setequipment] = useState([]);
   useEffect(() => {
-    fetch("/api/surfing_equipment")
+    fetch(`${server}/api/surfing_equipment`)
       .then((res) => res.json())
       .then((equipment) => setequipment(equipment));
   }, []);

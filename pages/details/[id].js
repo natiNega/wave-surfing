@@ -11,13 +11,14 @@ import {
 } from "@mui/material";
 // import Image from "next/image";
 import Modal from "../../components/modal/Modal";
+import { server } from '../../config'
 
 function Details() {
   const [details, setDetails] = useState();
   const router = useRouter();
   const { id } = router.query;
   useEffect(() => {
-    fetch(`/api/details/${id}`)
+    fetch(`${server}/api/details/${id}`)
       .then((res) => res.json())
       .then((data) => setDetails(data));
   }, []);

@@ -22,14 +22,15 @@ const Product = (product) => {
   const ProductCard = ({ showDetails }) => (
     <Card sx={{ maxWidth: 350 }}>
       <CardActionArea className={styles._card}>
-      <Button onClick={() => setToggleModal((p) => !p)} variant="text">
+        {/* <Button onClick={() => setToggleModal((p) => !p)} variant="text"> */}
         <CardMedia
           component="img"
           height="auto"
           image={image}
+          onClick={() => setToggleModal((p) => !p)}
           alt="Suft Baord"
         />
-        </Button>
+        {/* </Button> */}
         <CardContent>
           <Typography
             className={styles._cardName}
@@ -61,9 +62,6 @@ const Product = (product) => {
               +
             </Button>
             {/* <Link href={`/details/${_id}`}> */}
-           
-              
-            
             {/* </Link> */}
             {getQuntity(_id) > 0 && (
               <Button
